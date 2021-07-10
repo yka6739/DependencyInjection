@@ -1,0 +1,20 @@
+﻿@page "/"
+
+@inject SingletonServices singleton
+@inject TransientServices transient 
+<h1>Example of SingleTon and Transient Services</h1>
+
+<p>Singleton Result: @singleton.value</p>
+<p>Transient Result: @transient.value</p>
+
+<button class="btn btn-primary" @onclick="ExampleofDependencyInjection">Click me</button>
+
+@code {
+  
+
+    private void ExampleofDependencyInjection() // Function Name
+    {
+        singleton.value+=1;
+        transient.value+=1;
+    }
+}
